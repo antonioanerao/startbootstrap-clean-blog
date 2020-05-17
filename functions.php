@@ -1,6 +1,8 @@
 <?php
+define( 'WP_DEBUG', true );
+require_once get_template_directory() . '/inc/bootstrap-navwalker.php';
 // Carregando arquivos .css e .js
-function load_scripts(){
+function load_scripts() {
     //Arquivos .css
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', false );
     wp_enqueue_style( 'google-fonts-2', 'https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic', false );
@@ -25,3 +27,33 @@ function load_scripts(){
     );
 }
 add_action( 'wp_enqueue_scripts', 'load_scripts' );
+
+// Função de Configuração do Tema
+function wp_config(){
+    // Registrando menus
+    register_nav_menus( array(
+        'menu-1' => esc_html__( 'Primary', 'wphahamu' ),
+    ) );
+
+    // Adicionando suporte ao tema
+    $args = array(
+        'height'	=> 600,
+        'width'		=> 1920
+    );
+    add_theme_support( 'custom-header', $args );
+    add_theme_support( 'post-thumbnails' );
+    add_image_size( 'single-post-thumbnail', 1024, 800 );
+    add_theme_support( 'post-formats', array( 'video', 'image' ) );
+    add_theme_support('title-tag');
+    add_theme_support('custom-logo', [
+        'height' => '46',
+        'width' => '220'
+    ]);
+}
+add_action( 'after_setup_theme', 'wp_config', 0 );
+
+//Altera o valor padrao do the_expert(); de 55 para 20
+function resumo( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'resumo', 999 );

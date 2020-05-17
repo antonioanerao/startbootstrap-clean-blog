@@ -1,0 +1,35 @@
+.post-preview > a:focus, .post-preview > a:hover {
+    text-decoration: none;
+    color: #0085A1;
+}
+
+.post-preview > a > .post-title {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.post-preview > a > .post-subtitle {
+    font-size: larger;
+    margin-top: -10px;
+}
+
+.post-subtitle {
+    font-size: larger;
+    font-weight: 200;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+
+.post-preview > .post-meta {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 20px;
+    color: #868e96;
+}
+
+.post-preview > .post-meta > a {
+    text-decoration: none;
+    color: #212529;
+}
