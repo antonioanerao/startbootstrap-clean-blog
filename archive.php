@@ -7,8 +7,10 @@
         <div class="row">
             <div class="col-lg-12 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1><?php bloginfo('name'); ?></h1>
-                    <span class="subheading"><?php bloginfo('description'); ?></span>
+                    <?php
+                    the_archive_title('<h1><small>', '</small></h1>');
+                    the_archive_description();
+                    ?>
                 </div>
             </div>
         </div>
@@ -20,11 +22,11 @@
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             <?php
-                if ( have_posts() ) :
-                    while ( have_posts() ) : the_post();
-                        get_template_part('template-parts/content', get_post_format() );
-                    endwhile;
-            ?>
+            if ( have_posts() ) :
+                while ( have_posts() ) : the_post();
+                    get_template_part('template-parts/content', get_post_format() );
+                endwhile;
+                ?>
 
             <div class="clearfix">
                 <span class="float-right">

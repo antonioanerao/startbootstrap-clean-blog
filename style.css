@@ -33,3 +33,22 @@
     text-decoration: none;
     color: #212529;
 }
+
+.navbar {
+    top: 15px;
+}
+@media screen and (max-width: 500px) {
+    .navbar {
+        top: 0px;
+    }
+}
+
+/* CSS para ajustar a barra do admin */
+.admin-bar .navbar {
+    top: 32px;
+}
+@media screen and (max-width: 782px) {
+    .admin-bar .navbar {
+        top: 46px;
+    }
+}

@@ -1,6 +1,6 @@
 <?php
-define( 'WP_DEBUG', true );
 require_once get_template_directory() . '/inc/bootstrap-navwalker.php';
+require_once get_template_directory() . '/inc/customizer.php';
 // Carregando arquivos .css e .js
 function load_scripts() {
     //Arquivos .css
@@ -9,7 +9,7 @@ function load_scripts() {
     wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/vendor/bootstrap/css/bootstrap.min.css',
         array(), '1.0', 'all' );
     wp_enqueue_style( 'font-awesome-blog', get_template_directory_uri() . '/vendor/fontawesome-free/css/all.min.css',
-        array(), '1.0', 'all' );
+        array(), NULL, 'all' );
     wp_enqueue_style( 'blog-style', get_template_directory_uri() . '/css/clean-blog.min.css',
         array(), '1.0', 'all' );
     wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css',
@@ -57,3 +57,10 @@ function resumo( $length ) {
     return 20;
 }
 add_filter( 'excerpt_length', 'resumo', 999 );
+
+/* Customiza os botões de exibir posts mais recentes e mais antigos  */
+function posts_link_attributes() {
+    return 'class="btn btn-primary"';
+}
+add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');

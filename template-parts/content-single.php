@@ -3,7 +3,7 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="col-lg-10 col-md-10 mx-auto">
                 <div class="post-heading">
                     <h1><?php the_title(); ?></h1>
                     <span class="post-meta">
@@ -20,6 +20,11 @@
         <div class="row">
             <div class="col-lg-10 col-md-10 mx-auto">
                 <?php the_content(); ?>
+                <hr>
+                <p>
+                    <b>Categorias: </b><?php the_category(', '); ?> <br>
+                    <?php the_tags('<b>Tags:</b> ', ', '); ?>
+                </p>
                 <hr>
             </div>
         </div>
