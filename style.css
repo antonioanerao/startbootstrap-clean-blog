@@ -1,3 +1,12 @@
+/*
+Theme Name: Startbootstrap Clean Blog
+Theme URI: https://antonio.anerao.com.br
+Author: Antonio Anerão
+Description: Tema básico para blogs usando o tema Clean Blog
+Version: 1.0.0
+Tags: one-column, custom-header, custom-menu, custom-logo, blog, startbootstrap, clean blog
+*/
+
 .post-preview > a:focus, .post-preview > a:hover {
     text-decoration: none;
     color: #0085A1;
