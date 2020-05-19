@@ -1,6 +1,7 @@
 <div <?php post_class('post-preview'); ?>>
     <a href="<?php the_permalink(); ?>">
         <?php if ( has_post_thumbnail() ) {
+            echo "<br>";
             the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid img-thumbnail']);
         }  ?>
         <h2 class="post-title">
