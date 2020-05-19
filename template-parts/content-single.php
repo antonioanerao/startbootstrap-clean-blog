@@ -21,6 +21,8 @@
             <div class="col-lg-10 col-md-10 mx-auto">
                 <?php the_content(); ?>
                 <hr>
+                <?php is_active_sidebar('pesquisar-post'){dynamic_sidebar('pesquisar-post')} ?>
+                <hr>
                 <p>
                     <b>Categorias: </b><?php the_category(', '); ?> <br>
                     <?php the_tags('<b>Tags:</b> ', ', '); ?>

@@ -18,6 +18,7 @@
 <!-- Main Content -->
 <div class="container">
     <div class="row">
+        <?php is_active_sidebar('pesquisar-home'){dynamic_sidebar('pesquisar-home')} ?>
         <div class="col-lg-8 col-md-10 mx-auto">
             <?php
                 if ( have_posts() ) :
