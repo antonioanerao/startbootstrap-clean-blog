@@ -18,7 +18,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="container">
         <div class="row">
-            <div class="col-lg-10 col-md-10 mx-auto">
+            <div class="<?php if( is_active_sidebar( 'sidebar-post' ) ) { echo "col-md-8 col-lg-8"; } else { echo "col-md-10 col-lg-10"; } ?> mx-auto">
                 <?php the_content(); ?>
                 <hr>
                 <?php is_active_sidebar('pesquisar-post'){dynamic_sidebar('pesquisar-post')} ?>
@@ -29,6 +29,16 @@
                 </p>
                 <hr>
             </div>
+
+            <?php if( is_active_sidebar( 'sidebar-post' ) ): ?>
+                <div class="col-md-4 col-lg-4 mx-auto" style="margin-top: 15px">
+                    <div class="card card-sm">
+                        <div class="card-body">
+                            <?php dynamic_sidebar( 'sidebar-post' ); ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </article>
