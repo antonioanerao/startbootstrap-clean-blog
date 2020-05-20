@@ -18,7 +18,12 @@
 <!-- Main Content -->
 <div class="container">
     <div class="row">
-        <?php is_active_sidebar('pesquisar-home'){dynamic_sidebar('pesquisar-home')} ?>
+        <?php if(is_active_sidebar('pesquisar-home')) : ?>
+        <div class="<?php if(is_active_sidebar('sidebar-home')) { echo "col-md-12 col-lg-12"; } else { echo "col-md-10 col-lg-8"; } ?> mx-auto">
+            <?php dynamic_sidebar('pesquisar-home'); ?>
+        </div>
+        <?php endif; ?>
+
         <div class="col-lg-8 col-md-10 mx-auto">
             <?php
                 if ( have_posts() ) :
@@ -42,6 +47,8 @@
                 <?php endif; ?>
             </div>
         </div>
+
+        <?php get_sidebar('home'); ?>
     </div>
 </div>
 
