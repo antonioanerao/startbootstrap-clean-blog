@@ -30,15 +30,7 @@
                 <hr>
             </div>
 
-            <?php if( is_active_sidebar( 'sidebar-post' ) ): ?>
-                <div class="col-md-4 col-lg-4 mx-auto" style="margin-top: 15px">
-                    <div class="card card-sm">
-                        <div class="card-body">
-                            <?php dynamic_sidebar( 'sidebar-post' ); ?>
-                        </div>
-                    </div>
-                </div>
-            <?php endif; ?>
+            <?php get_sidebar('post'); ?>
         </div>
     </div>
 </article>
