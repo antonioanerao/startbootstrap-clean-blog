@@ -17,7 +17,12 @@
     <!-- Main Content -->
     <div class="container">
         <div class="row">
-            <?php is_active_sidebar('pesquisar-resultado-busca'){dynamic_sidebar('pesquisar-resultado-busca')} ?>
+            <?php if(is_active_sidebar('pesquisar-resultado-busca')) : ?>
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <?php dynamic_sidebar('pesquisar-resultado-busca'); ?>
+                </div>
+            <?php endif; ?>
+
             <div class="col-lg-8 col-md-10 mx-auto">
                 <?php
                 if ( have_posts() ) :
