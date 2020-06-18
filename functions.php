@@ -49,6 +49,26 @@ function wp_config(){
         'height' => '46',
         'width' => '220'
     ]);
+
+    add_theme_support( 'woocommerce', array(
+        'thumbnail_image_width'		=> 255,
+        'single_image_width'		=> 255,
+        'product_grid'				=> array(
+            'default_rows'    => 10,
+            'min_rows'        => 5,
+            'max_rows'        => 10,
+            'default_columns' => 1,
+            'min_columns'     => 1,
+            'max_columns'     => 1,
+        )
+    ) );
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+
+    if ( ! isset( $content_width ) ) {
+        $content_width = 600;
+    }
 }
 add_action( 'after_setup_theme', 'wp_config', 0 );
 
@@ -136,4 +156,8 @@ function wp_sidebar() {
         'before_title' => '<h2 style="display: none;">',
         'after_title' => '</h2>'
     ]);
+}
+
+if(class_exists('WooCommerce')) {
+    require get_template_directory() . '/inc/wc-modifications.php';
 }
