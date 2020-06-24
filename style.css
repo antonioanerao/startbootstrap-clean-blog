@@ -569,6 +569,69 @@ li.comment {
     margin-bottom: -100px;
 }
 
+/* Frontend Product Lists */
+.home main .section-title{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.home main .section-title::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 1px;
+    width: 100%;
+    background: #ddd;
+}
+
+.home main .section-title h2{
+    font-family: 'Seaweed Script';
+    font-size: 3rem;
+    position: relative;
+    display: inline-block;
+    background: #fff;
+    vertical-align: top;
+    padding: 0 20px 0 0;
+    margin: 0;
+}
+
+.home section.lab-blog{
+    padding: 40px 0;
+}
+
+.home .woocommerce ul.products {
+    border-top: none;
+}
+
+.home .woocommerce ul.products li.product .woocommerce-loop-product__title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #868686;
+    margin: 0;
+    padding: 0;
+    display: table;
+}
+
+.home .popular-products .woocommerce ul.products li.product .button,
+.home .new-arrivals .woocommerce ul.products li.product .button {
+    background-color: transparent;
+    color: #d83a65;
+    padding: 0;
+    margin: 0;
+    transition: 0.5s;
+}
+
+.home .popular-products .woocommerce ul.products li.product .button:hover,
+.home .new-arrivals .woocommerce ul.products li.product .button:hover {
+    color: #666;
+}
+
+.home .woocommerce ul.products li.product .button {
+    margin-top: 0;
+}
+
 .deal-of-the-week {
     background: #f7f7f7;
     padding: 60px 0;

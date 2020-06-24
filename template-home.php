@@ -41,56 +41,61 @@ get_header();
     </div>
 </div>
 
-<?php
-$showdeal			= get_theme_mod( 'set_deal_show', 0 );
-$deal 				= get_theme_mod( 'set_deal' );
-$currency			= get_woocommerce_currency_symbol();
-$regular			= get_post_meta( $deal, '_regular_price', true );
-$sale 				= get_post_meta( $deal, '_sale_price', true );
+    <?php
 
-if( $showdeal == 1 && ( !empty( $deal ) ) ):
-    $discount_percentage = absint( 100 - ( ( $sale/$regular ) * 100 ) );
-    ?>
-    <section class="deal-of-the-week">
-        <div class="container">
-            <h2>Deal of the Week</h2>
-            <div class="row d-flex align-items-center">
-                <div class="deal-img col-md-6 ml-auto col-12 text-center">
-                    <?php echo get_the_post_thumbnail( $deal, 'large', array( 'class' => 'img-fluid' ) ); ?>
+    // Getting data from Customizer to display the Deal of the Week section
+    $showdeal			= get_theme_mod( 'set_deal_show', 0 );
+    $deal 				= get_theme_mod( 'set_deal' );
+    $currency			= get_woocommerce_currency_symbol();
+    $regular			= get_post_meta( $deal, '_regular_price', true );
+    $sale 				= get_post_meta( $deal, '_sale_price', true );
+
+    // We'll only show this section if the user chooses to do so and if some deal product is set
+    if( $showdeal == 1 && ( !empty( $deal ) ) ):
+        $discount_percentage = absint( 100 - ( ( $sale/$regular ) * 100 ) );
+        ?>
+        <section class="deal-of-the-week">
+            <div class="container">
+                <div class="section-title">
+                    <h2><?php echo get_theme_mod( 'set_deal_title', 'Deal of the Week' ); ?></h2>
                 </div>
-                <div class="deal-desc col-md-4 mr-auto col-12 text-center">
-                    <?php if( !empty( $sale ) ): ?>
-                        <span class="discount">
+                <div class="row d-flex align-items-center">
+                    <div class="deal-img col-md-6 ml-auto col-12 text-center">
+                        <?php echo get_the_post_thumbnail( $deal, 'large', array( 'class' => 'img-fluid' ) ); ?>
+                    </div>
+                    <div class="deal-desc col-md-4 mr-auto col-12 text-center">
+                        <?php if( !empty( $sale ) ): ?>
+                            <span class="discount">
 												<?php echo $discount_percentage . '% OFF'; ?>
 											</span>
-                    <?php endif; ?>
-                    <h3>
-                        <a href="<?php echo get_permalink( $deal ); ?>"><?php echo get_the_title( $deal ); ?></a>
-                    </h3>
-                    <p><?php echo get_the_excerpt( $deal ); ?></p>
-                    <div class="prices">
+                        <?php endif; ?>
+                        <h3>
+                            <a href="<?php echo get_permalink( $deal ); ?>"><?php echo get_the_title( $deal ); ?></a>
+                        </h3>
+                        <p><?php echo get_the_excerpt( $deal ); ?></p>
+                        <div class="prices">
 											<span class="regular">
 												<?php
                                                 echo $currency;
                                                 echo $regular;
                                                 ?>
 											</span>
-                        <?php if( !empty( $sale ) ): ?>
-                            <span class="sale">
+                            <?php if( !empty( $sale ) ): ?>
+                                <span class="sale">
 													<?php
                                                     echo $currency;
                                                     echo $sale;
                                                     ?>
 												</span>
-                        <?php endif; ?>
+                            <?php endif; ?>
+                        </div>
+                        <a href="<?php echo esc_url( '?add-to-cart=' . $deal ); ?>" class="add-to-cart">Add to Cart</a>
                     </div>
-                    <a href="<?php echo esc_url( '?add-to-cart=' . $deal ); ?>" class="add-to-cart">Add to Cart</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     <?php endif; ?>
-
+ <br>
 <div class="container">
     <div class="row">
         <div class="col-lg-12 col-md-12 mx-auto">
