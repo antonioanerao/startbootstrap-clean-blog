@@ -312,11 +312,10 @@ li.comment {
 
 .woocommerce ul.products li.product .onsale{
     top: 16px;
-    right: 0;
+    right: 10px;
     left: 0;
     transform: rotate(90deg);
     border-radius: 0;
-    width: 83px;
     padding: 0;
     background-color: #D2335B;
     margin: 0;
@@ -461,6 +460,21 @@ li.comment {
 }
 
 /* Cart */
+.cart a {
+    font-size: 18px;
+    color: #ccc;
+}
+
+.cart .items{
+    background: #ca2424;
+    color: #ffffff;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    font-size: 13px;
+}
 
 .woocommerce-cart table.cart td.actions .coupon .input-text{
     width: 150px;
@@ -490,4 +504,158 @@ li.comment {
 .size-thumbnail {
     max-width: 100%;
     height: auto;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    font-size: 22px;
+    text-transform: capitalize;
+}
+
+.woocommerce ul.products li.product p {
+    color: #000;
+    margin-bottom: 0px;
+}
+
+.woocommerce-Price-amount {
+    color: #a5a5a5;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.woocommerce ul.products li.product p {
+    color: #a5a5a5;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.page-template-template-home .woocommerce ul.products li.product .button {
+    display: none;
+}
+
+.woocommerce a.button {
+    font-size: 100%;
+    margin: 0px 0 0;
+    line-height: 0.8;
+    position: relative;
+    text-decoration: none;
+    overflow: visible;
+    padding: .618em 1em;
+    font-weight: 700;
+    border-radius: 3px;
+    left: auto;
+    color: #515151;
+    background-color: #ebe9eb;
+    border: 0;
+    display: inline-block;
+    background-image: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.woocommerce a.added_to_cart {
+    padding-top: .3em;
+    display: inline-block;
+}
+
+.section-separator {
+    margin-bottom: -300px;
+}
+
+.woocommerce.columns-4 {
+    margin-bottom: -100px;
+}
+
+.products.columns-4 {
+    margin-bottom: -100px;
+}
+
+.deal-of-the-week {
+    background: #f7f7f7;
+    padding: 60px 0;
+}
+
+.deal-of-the-week .row{
+    padding: 30px 0;
+}
+
+.deal-of-the-week .discount{
+    background: #ff6891;
+    color: #fff;
+    padding: 0.5rem;
+    display: inline-block;
+    margin: 20px 0;
+    position: relative;
+}
+
+.deal-of-the-week .discount:before{
+    content: '';
+    position: absolute;
+    top: 6%;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    border: 1px dashed #ffc8d8;
+}
+
+.deal-of-the-week .discount:after{
+    content: '';
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    border: 1px dashed #ffc8d8;
+}
+
+.deal-of-the-week .section-title{
+    margin: 0 !important;
+}
+
+.deal-of-the-week h2{
+    background: #f8f8f8 !important;
+}
+
+.deal-of-the-week h3{
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.deal-of-the-week h3 a{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+    transition: 0.5s;
+}
+
+.deal-of-the-week h3 a:hover{
+    color: #777;
+}
+
+.deal-of-the-week p{
+    color: #aeaeae;
+    font-size: 1.2rem;
+}
+
+.deal-of-the-week .prices .regular{
+    font-size: 1.4rem;
+    font-weight: 600;
+    opacity: 0.4;
+    text-decoration: line-through;
+}
+
+.deal-of-the-week .prices .sale{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.deal-of-the-week a.add-to-cart{
+    background-color: #D2335B;
+    color: #fff;
+    text-decoration: none;
+    line-height: 1;
+    padding: 0.618em 1em;
+    font-weight: 700;
+    border-radius: 3px;
+    display: inline-block;
+    margin-top: 10px;
 }

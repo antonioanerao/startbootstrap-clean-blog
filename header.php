@@ -36,5 +36,11 @@
             ) );
             ?>
         </div>
+        <?php if( class_exists( 'WooCommerce' ) ): ?>
+            <div class="cart text-right">
+                <a href="<?php echo wc_get_cart_url(); ?>"><span class="fa fa-shopping-cart"></span></a>
+                <span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+            </div>
+        <?php endif; ?>
     </div>
 </nav>

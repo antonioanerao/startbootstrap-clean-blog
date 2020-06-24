@@ -52,10 +52,12 @@ function fancy_lab_wc_modify(){
         function fancy_lab_close_sidebar_tags(){
             echo '</div>';
         }
+
+        //Add product description on shop page
+        add_action( 'woocommerce_after_shop_loop_item_title', 'the_excerpt', 1 );
     }
 
     remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar' );
 
-    add_action( 'woocommerce_after_shop_loop_item_title', 'the_excerpt', 1 );
 }
 add_action('wp', 'fancy_lab_wc_modify');
