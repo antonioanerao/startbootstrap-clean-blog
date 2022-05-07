@@ -69,5 +69,22 @@ function wphahamu_customizer ( $wp_customizer ) {
         'section' => 'sec_redes_sociais',
         'type' => 'text'
     ]);
+
+	$wp_customizer->add_setting(
+		'add_dockerhub', [
+		'type' => 'theme_mod',
+		'default' => '#',
+		'sanitize_callback' => 'wp_filter_nohtml_kses'
+	]);
+
+	$wp_customizer->add_control(
+		'add_dockerhub', [
+		'label' => 'DockerHub',
+		'description' => 'Link do Docker Hub',
+		'section' => 'sec_redes_sociais',
+		'type' => 'text'
+	]);
+
+
 }
 add_action('customize_register', 'wphahamu_customizer');
