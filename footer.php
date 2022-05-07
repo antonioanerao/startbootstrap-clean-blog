@@ -48,6 +48,17 @@
                             </a>
                         </li>
                     <?php endif; ?>
+
+	                <?php if (!empty(get_theme_mod('add_dockerhub')) and (get_theme_mod('add_dockerhub') <> "#")) : ?>
+                        <li class="list-inline-item">
+                            <a href="<?php echo get_theme_mod('add_dockerhub'); ?>" target="_blank">
+                            <span class="fa-stack fa-lg">
+                              <i class="fas fa-circle fa-stack-2x"></i>
+                              <i class="fab fa-docker fa-stack-1x fa-inverse"></i>
+                            </span>
+                            </a>
+                        </li>
+	                <?php endif; ?>
                 </ul>
                 <p class="copyright text-muted">Copyright &copy; <?php echo bloginfo('name') . ' ' . date('Y'); ?> </p>
             </div>
