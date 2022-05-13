@@ -19,6 +19,12 @@
     <div class="container">
         <div class="row">
             <div class="<?php if( is_active_sidebar( 'sidebar-post' ) ) { echo "col-md-8 col-lg-8"; } else { echo "col-md-10 col-lg-10"; } ?> mx-auto">
+
+	            <?php if ( has_post_thumbnail() ) {
+		            echo "<br>";
+		            the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid img-thumbnail']);
+	            }  ?>
+
                 <?php the_content(); ?>
                 <hr>
                 <?php is_active_sidebar('pesquisar-post'){dynamic_sidebar('pesquisar-post')} ?>
