@@ -1,0 +1,16 @@
+{
+  "name": "antonioanerao/startbootstrap-clean-blog",
+  "description": "Tema WordPress usando o Startbootstrap Clean Blog, com Widgets, barra lateral e comentários nativos do WP.",
+  "type": "library",
+  "require": {
+    "php": ">=7.0"
+  },
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Antonio Anerão",
+      "email": "antonio.anerao@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev"
+}
