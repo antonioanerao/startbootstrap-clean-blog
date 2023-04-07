@@ -16,7 +16,7 @@
             if (has_custom_logo()) {
                     the_custom_logo();
             } else {
-                echo '<a class="navbar-brand" href=" '. get_bloginfo('home') .' ">' . get_bloginfo( "name" ) . '</a>';
+                echo '<a class="navbar-brand" href=" '. get_bloginfo('url') .' ">' . get_bloginfo( "name" ) . '</a>';
             }
         ?>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
