@@ -27,7 +27,7 @@
 
                 <?php the_content(); ?>
                 <hr>
-                <?php is_active_sidebar('pesquisar-post'){dynamic_sidebar('pesquisar-post')} ?>
+                <?php is_active_sidebar('pesquisar-post') ? dynamic_sidebar('pesquisar-post') : '' ?>
                 <hr>
                 <p>
                     <b>Categorias: </b><?php the_category(', '); ?> <br>
