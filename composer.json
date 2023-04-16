@@ -3,7 +3,7 @@
   "description": "Tema WordPress usando o Startbootstrap Clean Blog, com Widgets, barra lateral e comentários nativos do WP.",
   "type": "library",
   "require": {
-    "php": ">=7.0"
+    "php": ">=8.0"
   },
   "license": "proprietary",
   "authors": [
