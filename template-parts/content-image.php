@@ -2,7 +2,7 @@
     <h2 class="post-title">
         <?php the_title(); ?>
         <h5 class="post-subtitle">
-            <?php the_excerpt(); ?>
+            <?php the_content(); ?>
         </h5>
     </h2>
     <?php if ( has_post_thumbnail() ) {
