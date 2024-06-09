@@ -74,6 +74,21 @@ function excluirPaginaBusca($query) {
 }
 add_filter('pre_get_posts','excluirPaginaBusca');
 
+// Exclude posts of type image from widget Recent Posts 
+
+function exclude_post_formats_from_recent_posts($args) {
+    $args['tax_query'] = array(
+        array(
+            'taxonomy' => 'post_format',
+            'field' => 'slug',
+            'terms' => array('post-format-image'),
+            'operator' => 'NOT IN'
+        )
+    );
+    return $args;
+}
+add_filter('widget_posts_args', 'exclude_post_formats_from_recent_posts');
+
 // Registrando Sidebars
 add_action('widgets_init', 'wp_sidebar');
 function wp_sidebar() {
