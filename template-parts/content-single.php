@@ -28,12 +28,13 @@
                 <?php the_content(); ?>
                 <hr>
                 <?php is_active_sidebar('pesquisar-post') ? dynamic_sidebar('pesquisar-post') : '' ?>
-                <hr>
-                <p>
-                    <b>Categorias: </b><?php the_category(', '); ?> <br>
-                    <?php the_tags('<b>Tags:</b> ', ', '); ?>
-                </p>
-                <hr>
+                <?php if(is_single()): ?>
+                    <p>
+                        <b>Categorias: </b><?php the_category(', '); ?> <br>
+                        <?php the_tags('<b>Tags:</b> ', ', '); ?>
+                    </p>
+                    <hr>
+                <?php endif; ?>
             </div>
 
             <?php get_sidebar('post'); ?>
