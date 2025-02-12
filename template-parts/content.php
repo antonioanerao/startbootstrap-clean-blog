@@ -30,6 +30,6 @@
     </p>
 <?php if (is_sticky()) { echo "</div></div>"; } ?>
 </div>
-<?php if (! $wp_query->current_post + 1 === $wp_query->post_count ) : ?>
+<?php if ( $wp_query->current_post + 1 != $wp_query->post_count ) : ?>
     <hr>
 <?php endif; ?>
