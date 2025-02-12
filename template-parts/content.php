@@ -6,6 +6,13 @@
                 <div style='margin-bottom: -20px; color: #777777' class='card-text'><i style='color: #777777;' class='fa fa-sticky-note'></i> Post Fixado</div>";
     }
 ?>
+    <span class="badge badge-<?php if (has_category('news')) { echo "success"; } else { echo "primary"; } ?> mb-2">
+        <?php if ( has_category( 'news' ) ) : ?>
+            Notícias
+        <?php else: ?>
+            Geral
+        <?php endif; ?>
+    </span>
     <a href="<?php the_permalink(); ?>">
         <?php if ( has_post_thumbnail() ) {
             echo "<br>";
@@ -23,4 +30,6 @@
     </p>
 <?php if (is_sticky()) { echo "</div></div>"; } ?>
 </div>
-<hr>
+<?php if (! $wp_query->current_post + 1 === $wp_query->post_count ) : ?>
+    <hr>
+<?php endif; ?>
